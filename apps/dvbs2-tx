@@ -477,7 +477,7 @@ class dvbs2_tx(gr.top_block, Qt.QWidget):
             ",trigger_role1=" + 'master' + ",trigger_signal1=" + 'J51_1' +
             ",bias_tee0=" + str(self.blade_rf['bias_tee'][0]) + ",bias_tee1=" +
             str(self.blade_rf['bias_tee'][1]) + 
-            ",buflen=" + self.blade_rf['buffer_size'] + ",buffers=" + self.blade_rf['num_buffers'])
+            ",buflen=" + str(self.blade_rf['buffer_size']) + ",buffers=" + str(self.blade_rf['num_buffers']))
 
         chan = self.blade_rf['channel']
         blade_rf_sink.set_sample_rate(self.samp_rate)

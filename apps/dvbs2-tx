@@ -138,7 +138,10 @@ class dvbs2_tx(gr.top_block, Qt.QWidget):
             'dev': options.bladerf_dev,
             'if_gain': options.bladerf_if_gain,
             'ref_clk': options.bladerf_ref_clk,
-            'rf_gain': options.bladerf_rf_gain
+            'rf_gain': options.bladerf_rf_gain,
+            'num_buffers': options.bladerf_num_buffers,
+            'buffer_size': options.bladerf_buffer_size,
+            'num_transfers': options.bladerf_num_transfers,
         }
         self.plutosdr = {
             'address': options.plutosdr_addr,

@@ -981,6 +981,10 @@ def argument_parser():
                            type=int,
                            default=4096,
                            help="Size of the internal buffer in samples")
+    brf_group.add_argument('--bladerf-num-transfers',
+                           type=int,
+                           default=32,
+                           help="Number of Transfers")
 
     pluto_group = parser.add_argument_group('PlutoSDR Options')
     pluto_group.add_argument('--plutosdr-addr',

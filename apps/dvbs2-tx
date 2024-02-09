@@ -141,6 +141,7 @@ class dvbs2_tx(gr.top_block, Qt.QWidget):
             'rf_gain': options.bladerf_rf_gain,
             'num_buffers': options.bladerf_num_buffers,
             'buffer_size': options.bladerf_buffer_size,
+            'num_transfers': options.bladerf_num_transfers,
         }
         self.plutosdr = {
             'address': options.plutosdr_addr,
@@ -477,7 +478,9 @@ class dvbs2_tx(gr.top_block, Qt.QWidget):
             ",trigger_role1=" + 'master' + ",trigger_signal1=" + 'J51_1' +
             ",bias_tee0=" + str(self.blade_rf['bias_tee'][0]) + ",bias_tee1=" +
             str(self.blade_rf['bias_tee'][1]) + 
-            ",buflen=" + str(self.blade_rf['buffer_size']) + ",buffers=" + str(self.blade_rf['num_buffers']))
+            ",buflen=" + str(self.blade_rf['buffer_size']) +
+            ",buffers=" + str(self.blade_rf['num_buffers']) +
+            ",transfers=" + str(self.blade_rf['num_transfers']))
 
         chan = self.blade_rf['channel']
         blade_rf_sink.set_sample_rate(self.samp_rate)
